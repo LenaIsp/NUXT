@@ -53,4 +53,6 @@
 <script setup>
   import menu from "@/config/menu";
   
+  const localePath = useLocalePath();
+  
 </script>
