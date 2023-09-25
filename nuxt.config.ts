@@ -17,7 +17,6 @@ export default defineNuxtConfig({
     [
       '@nuxtjs/i18n',
       {
-        baseUrl: 'https://test.com',
         compilation: {
           strictMessage: false,
           escapeHtml: false,
@@ -40,7 +39,7 @@ export default defineNuxtConfig({
         ],
         strategy: 'prefix',
         lazy: true,
-        langDir: 'locales/',
+        langDir: 'I18n/',
         defaultLocale: 'ru',
       },
     ],
