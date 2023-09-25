@@ -1,29 +1,14 @@
 <template>
   <div class="header-app">
     <div class="b-header_in asd-flex-row-left asd-flex-space-between">
-      <!--Логотип-->
+      <!--Логотип слева-->
       <div class="b-header_left">
-        <NuxtLink
-          class="b-header_logo asd-bg-fit"
-          :class="'b-header_logo_' + locale"
-          :to="localePath('/' + locale)"
-        ></NuxtLink>
       </div>
 
-      <!--Меню-->
+      <!--Меню справа-->
       <div class="b-header_right asd-flex-row-right" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <div class="b-header_links asd-flex-row-right hide-mobile">
-          <NuxtLink
-            v-for="(item, index) in menu.pagesAll"
-            :key="index"
-            itemprop="url"
-            class="ml-20 b-header_link b-text b-hover b-underline-hover b-underline--blue"
-            active-class="b-underline b-underline--white"
-           
-            :to= "localePath('/' +  locale + item.to + '/')"
-          >
-            {{ $t(item.name) }}
-          </NuxtLink>
+
           <div class="ml-20 b-header_link b-text b-hover b-underline-hover b-underline--blue">
             {{ $t('header.lang') }}
           </div>
@@ -51,10 +36,9 @@
 </template>
 
 <script setup>
+  import menu from "@/config/menu";
+
   const localePath = useLocalePath();
   const { locale } = useI18n();
 
-  import menu from "@/config/menu";
-  
-  menu
 </script>
