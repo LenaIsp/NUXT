@@ -5,8 +5,8 @@
       <div class="b-header_left">
         <NuxtLink
           class="b-header_logo asd-bg-fit"
-          :class="'b-header_logo_' + $i18n.locale"
-          :to="localePath('/' + $i18n.locale)"
+          :class="'b-header_logo_' + locale"
+          :to="localePath('/' + locale)"
         ></NuxtLink>
       </div>
 
@@ -20,7 +20,7 @@
             class="ml-20 b-header_link b-text b-hover b-underline-hover b-underline--blue"
             active-class="b-underline b-underline--white"
            
-            :to= "localePath('/' +  $i18n.locale + item.to + '/')"
+            :to= "localePath('/' +  locale + item.to + '/')"
           >
             {{ $t(item.name) }}
           </NuxtLink>
@@ -51,6 +51,9 @@
 </template>
 
 <script setup>
+  const localePath = useLocalePath();
+  const { locale } = useI18n();
+
   import menu from "@/config/menu";
   
   menu
