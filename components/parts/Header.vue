@@ -20,7 +20,7 @@
             class="ml-20 b-header_link b-text b-hover b-underline-hover b-underline--blue"
             active-class="b-underline b-underline--white"
            
-            :to= "localePath('/' +  $i18n.locale + item.to + '/')"
+            :to= "localePath(item.to)"
           >
             {{ $t(item.name) }}
           </NuxtLink>
@@ -54,5 +54,6 @@
   import menu from "@/config/menu";
   
   const localePath = useLocalePath();
+  const { locale } = useI18n();
   
 </script>
