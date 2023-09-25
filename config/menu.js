@@ -6,10 +6,10 @@ const pagesAbout = [
     //     routeNameNuxt: 'index-about-company___'
     // },
     {
-        to: '/about/strategy',
-        name: 'about.header.strategy',
+        to: '/about',
+        name: 'about.header',
         routeName: 'AboutStrategy',
-        routeNameNuxt: 'index-about-strategy___'
+        routeNameNuxt: 'index-about'
     },
     {
         to: '/about/leadership',
@@ -56,7 +56,7 @@ const pagesAll = [
         routeName: 'Media',
     },
     {
-        to: '/about/strategy',
+        to: '/about',
         name: 'header.about',
         routeName: 'About',
         children: pagesAbout,
