@@ -1,0 +1,63 @@
+/****************************************** INTRO *********************************************/
+
+.idx-intro_wrap {
+    overflow: hidden;
+}
+.idx-intro_title {
+    font-size: em(190);
+    letter-spacing: -0.028em;
+    line-height: em(155, 190);
+    text-transform: uppercase;
+
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+    &:last-child {
+        margin-left: em(51, 190);
+    }
+}
+.idx-intro_title-wrap {
+    perspective: em(1000);
+    max-width: em(1404);
+}
+.idx-intro_overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+.idx-intro_bg {
+    background: rgba(0, 0, 0, 0.3);
+}
+.idx-intro_bg-video {
+    @include asd-pos-left-top;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.html-mobile {
+    .idx-intro_title {
+        font-size: em(99);
+        line-height: 1;
+
+        &:last-child {
+            margin-left: em(27, 99);
+        }
+    }
+    .idx-intro_title-wrap {
+        max-width: em(731);
+    }
+}
+
+
+.html-phone {
+    .idx-intro_title {
+        font-size: em(48);
+
+        &:last-child {
+            margin-left: em(14, 48);
+        }
+    }
+    .idx-intro_title-wrap {
+        max-width: em(355);
+    }
+}

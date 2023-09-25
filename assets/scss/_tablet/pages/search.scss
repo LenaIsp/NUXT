@@ -1,0 +1,20 @@
+/****************************************** SEARCH *********************************************/
+
+.sr-result_head {
+    &_tags {
+        width: 48%;
+        .sr-result_head_item {
+            margin: em(10) em(15) 0 0;
+        }
+    }
+    &_sort {
+        width: 48%;
+        .sr-result_head_item {
+            margin: em(10) 0 0 em(15);
+        }
+    }
+    &_item {
+        white-space: nowrap;
+        margin: em(10) em(15) 0 0;
+    }
+}

@@ -1,0 +1,93 @@
+@use "sass:math";
+.map-page {
+    padding: em(120) em(90) em(100) 0;
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        margin-top: em(60);
+    }
+
+    &__table {
+        width: 50%;
+
+        &-row {
+            display: flex;
+            margin-bottom: em(20);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-key {
+            flex-shrink: 0;
+            width: em(192);
+            padding-right: em(40);
+        }
+
+        &-value {
+            max-width: em(510);
+        }
+    }
+
+    &__map {
+        width: em(562);
+        height: em(300);
+        margin-left: em(110);
+    }
+
+    &__bullet {
+      list-style-type: none;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: em(14);
+        transform: translateX(-50%);
+        left: em(-12);
+        background-color: #fff;
+        width: em(4.3);
+        height: em(4);
+        border-radius: 100%;
+      }
+    }
+}
+.m-text {
+    font-size: 1.25em;
+    line-height: 1.6;
+}
+
+.ul-map, .about-ul, .ul-date {
+  list-style: unset !important;
+}
+
+.ul-map {
+    margin: 20px 0 0 24px;
+}
+
+.about-ul {
+    padding-left: 10px;
+    &__bullet {
+      list-style: disc;
+    }
+}
+
+.ul-date {
+    padding-left: 10px;
+}
+
+
+
+
+.html-mobile {
+  .map-page {
+    &__bullet {
+      &::before {
+        left: em(-14);
+        width: em(4.3);
+        height: em(4);
+      }
+    }
+  }
+}

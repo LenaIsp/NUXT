@@ -1,0 +1,152 @@
+.md-items-inner {
+    &.md-items-inner--gallery {
+        margin: 0 em(-5);
+        align-items: flex-start;
+    }
+}
+
+.gallery-item {
+    width: 33.3%;
+    padding: 0 em(5);
+    margin-bottom: em(40);
+
+    &:hover {
+        .gallery-item {
+            &__img {
+                svg {
+                    opacity: 1;
+                }
+            }
+
+            &__title {
+                color: $blue;
+            }
+        }
+    }
+
+    &--download {
+        margin-bottom: em(60);
+
+        &:hover {
+            .gallery-item {
+                &__title {
+                    color: inherit;
+                }
+            }
+        }
+
+        .gallery-item {
+            &__title {
+                display: flex;
+                align-items: center;
+                font-size: em(14);
+
+                &:hover {
+                    color: $blue;
+                }
+            }
+
+            &__info-text {
+                color: #B0B0B0;
+            }
+        }
+    }
+
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 65.945%;
+        margin-bottom: em(10);
+        background-color: $blue;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        > img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 65%;
+            max-height: 55%;
+            z-index: 2;
+        }
+
+        svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transition: all .2s $ease;
+            pointer-events: none;
+            z-index: 3;
+        }
+    }
+
+    &__iframe {
+        margin-bottom: em(10);
+
+        .video-player__iframe-wrapper {
+            padding-bottom: 65.945%;
+        }
+    }
+
+    &__description {
+        margin-top: em(10);
+    }
+
+    &__title {
+        font-size: em(20);
+        transition: all .2s $ease;
+        margin-bottom: em(10, 20);
+        display: inline-block;
+
+        svg {
+            width: em(14);
+            height: em(14);
+            margin-right: em(10);
+        }
+    }
+
+    &__info {
+        display: flex;
+
+        &-text {
+            font-size: em(14);
+            margin-right: em(10);
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .gallery-item {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .gallery-item {
+        width: 100%;
+        margin-bottom: em(55);
+
+        &--download {
+            margin-bottom: em(40);
+        }
+
+        &__img {
+            margin: 0 em(-10);
+            margin-bottom: em(10);
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@use "sass:math";
+@function em($pixels,$context:$base-font-size) {
+    @return math.div($pixels,$context)+em;
+}
+
+@mixin safari {
+    @media not all and (min-resolution: .001dpcm) {
+        @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+            @content;
+        }
+    }
+}

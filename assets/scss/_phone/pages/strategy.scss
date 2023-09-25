@@ -1,0 +1,14 @@
+.strategy-page {
+    padding-top: em(105);
+
+    &__title {
+        font-size: em(20);
+        margin-right: 0;
+        margin-bottom: em(10);
+    }
+
+    &__header {
+        flex-direction: column;
+        padding-bottom: em(40);
+    }
+}

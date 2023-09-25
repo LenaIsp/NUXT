@@ -1,0 +1,129 @@
+/* =====================================================================
+					           FORM ELEMENTS
+======================================================================== */
+
+// common button
+.b-button {
+    position: relative; display: inline-block; box-sizing: border-box;
+    background: transparent; border: none; padding: 0; outline: none;
+
+    -webkit-transition: background 300ms ease-out, color 300ms ease-out, border 300ms ease-out;
+    transition: background 300ms ease-out, color 300ms ease-out, border 300ms ease-out;
+
+    -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+
+    span { color: inherit; text-align: center; position: relative; line-height: 1; display: inline-block; vertical-align: middle; }
+    em { display: inline-block; vertical-align: middle; position: relative; }
+
+    &_disabled { cursor: auto !important; pointer-events: none; }
+}
+
+
+
+// button 1
+.b-button_1 {
+    color: black; width: auto; height: 3em; font-weight: normal; padding: 0 1em;
+    background: transparent; border: 2px solid black;
+
+    span { font-size: em(16); line-height: 1.2; }
+
+    &.b-hover {
+        &:hover { background-color: #ffffff; }
+    }
+
+    & + .b-button_1 { margin-left: 1em; }
+
+    &.b-button_disabled { opacity: 0.5; }
+
+    &.w-100 { min-width: auto; }
+}
+
+
+
+
+
+
+
+// inputs
+.b-input {
+    height: 3em; width: 100%; color: #898989; padding: 0.8em 1em; font-size: 1em; background: white;
+    border: 2px solid black; border-radius: 0; position: relative; line-height: 1; box-shadow: none !important;
+
+    &::-webkit-input-placeholder { color: #898989; font-weight: normal; }
+    &::-moz-placeholder { color: #898989; font-weight: normal; }
+    &:-ms-input-placeholder { color: #898989 !important; font-weight: 400 !important; }
+
+    &:focus::-webkit-input-placeholder { color: transparent; }
+    &:focus::-moz-placeholder { color: transparent; }
+
+    &::-ms-clear { display: none; }
+
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 100px rgba(255, 255, 255, 1) inset !important;
+        -webkit-text-fill-color: #000000 !important;
+    }
+}
+textarea.b-input { height: 6em; resize: none }
+
+.b-input_file { opacity: 0; cursor: pointer; }
+
+
+
+
+
+
+
+
+/* checkbox */
+.b-checkbox_wrap { display: inline-block; vertical-align: top; position: relative; }
+
+.b-checkbox { position: absolute; opacity: 0; width: 15px; height: 15px; left: 0; top: 0; cursor: pointer; margin: 0; }
+.b-checkbox + label { position: relative; cursor: pointer; display: block; height: 15px; }
+.b-checkbox + label > span {
+    @include asd-flex-row-left; padding: 0 0 0 30px; white-space: normal; font-size: 1em; line-height: 1;
+    width: auto; text-align: left; height: 100%;
+}
+.b-checkbox:hover + label > span { color: #202020; }
+.b-checkbox + label:before {
+    @include asd-pos-left-top; content: ''; width: 15px; height: 15px; background: transparent;
+    border: 1px solid #cccccc; box-sizing: border-box;
+}
+.b-checkbox:checked + label:after {
+    @include asd-pos-left-top; content: ''; margin: 4px 0 0 4px; width: 7px; height: 7px;
+    background: rgba(0, 0, 0, 0.7); box-sizing: border-box;
+}
+.b-checkbox:checked + label:before { border: 1px solid rgba(0, 0, 0, 0.7); }
+
+
+
+
+
+
+
+
+/* radio */
+.b-radio_wrap { display: inline-block; vertical-align: top; position: relative; }
+
+.b-radio { position: absolute; opacity: 0; width: 15px; height: 15px; left: 0; top: 0; cursor: pointer; margin: 0; }
+.b-radio + label { position: relative; cursor: pointer; display: block; height: 15px; }
+.b-radio + label > span {
+    @include asd-flex-row-left; padding: 0 0 0 30px; white-space: normal; font-size: 1em; line-height: 1;
+    width: auto; text-align: left; height: 100%;
+}
+.b-radio:hover + label > span { color: #202020; }
+.b-radio + label:before {
+    @include asd-pos-left-top; content: ''; width: 15px; height: 15px; background: transparent;
+    border: 1px solid #cccccc; border-radius: 30em; box-sizing: border-box;
+}
+.b-radio:checked + label:after {
+    @include asd-pos-left-top; content: ''; margin: 4px 0 0 4px; width: 7px; height: 7px;
+    background: rgba(0, 0, 0, 0.7); border-radius: 30em; box-sizing: border-box;
+}
+.b-radio:checked + label:before { border: 1px solid rgba(0, 0, 0, 0.7); }
+
+
+
+
+
+
+

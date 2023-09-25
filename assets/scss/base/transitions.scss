@@ -1,0 +1,160 @@
+/****************************************** transitions **********************************************/
+@mixin b-trans_all {
+    -webkit-transition: 300ms all ease-out;
+    transition: 300ms all ease-out;
+}
+
+@mixin b-trans_opacity {
+    -webkit-transition: 300ms opacity ease-out;
+    transition: 300ms opacity ease-out;
+}
+
+@mixin b-trans_color {
+    -webkit-transition: 300ms color ease-out;
+    transition: 300ms color ease-out;
+}
+
+@mixin b-trans_color_opacity {
+    -webkit-transition: 300ms color ease-out, 300ms opacity ease-out;
+    transition: 300ms color ease-out, 300ms opacity ease-out;
+}
+
+@mixin b-trans_background {
+    -webkit-transition: 300ms background ease-out;
+    transition: 300ms background ease-out;
+}
+
+@mixin b-trans_border_background {
+    -webkit-transition: 300ms background ease-out, 300ms border ease-out;
+    transition: 300ms background ease-out, 300ms border ease-out;
+}
+
+@mixin b-trans_transform {
+    -webkit-transition: 300ms -webkit-transform ease-out;
+    transition: 300ms transform ease-out;
+}
+
+@mixin b-trans_margin {
+    -webkit-transition: 300ms margin ease-out;
+    transition: 300ms margin ease-out;
+}
+
+@mixin b-trans_transform_opacity {
+    -webkit-transition: 300ms -webkit-transform ease-out, 300ms opacity ease-out;
+    transition: 300ms transform ease-out, 300ms opacity ease-out;
+}
+
+@mixin b-trans_width_height {
+    -webkit-transition: 300ms width ease-out, 300ms height ease-out;
+    transition: 300ms width ease-out, 300ms height ease-out;
+}
+
+@mixin b-trans_max_height {
+    -webkit-transition: 300ms max-height ease-out;
+    transition: 300ms max-height ease-out;
+}
+
+@mixin b-trans_left_top {
+    -webkit-transition: 300ms left ease-out, 300ms top ease-out;
+    transition: 300ms left ease-out, 300ms top ease-out;
+}
+
+@mixin b-trans_left_top_transform {
+    -webkit-transition: 300ms left ease-out, 300ms top ease-out, 300ms -webkit-transform ease-out;
+    transition: 300ms left ease-out, 300ms top ease-out, 300ms transform ease-out;
+}
+
+/* animations */
+@-webkit-keyframes bounce {
+    from, to {
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-transform: translate3d(0, 15px, 0);
+        transform: translate3d(0, 15px, 0);
+    }
+}
+
+@keyframes bounce {
+    from, to {
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-transform: translate3d(0, 15px, 0);
+        transform: translate3d(0, 15px, 0);
+    }
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+
+
+
+
+
+
+
+
+/* header */
+.headerdown-enter-active,
+.headerdown-leave-active { transition: transform 250ms ease-out; }
+.headerdown-enter,
+.headerdown-leave-to { transform: translateY(-100%); }
+.headerdown-enter-active { transition-delay: 300ms; }
+
+
+
+/* footer */
+.footerfade-enter-active,
+.footerfade-leave-active { transition: opacity 300ms ease-out; }
+.footerfade-enter,
+.footerfade-leave-to { opacity: 0; }
+.footerfade-enter-active { transition-delay: 300ms; }
+
+
+
+
+/* fade-100 */
+.fade-100-enter-active,
+.fade-100-leave-active { transition: opacity 100ms ease-out; }
+.fade-100-enter,
+.fade-100-leave-to { opacity: 0; }
+
+/* fade-200 */
+.fade-200-enter-active,
+.fade-200-leave-active { transition: opacity 200ms ease-out; }
+.fade-200-enter,
+.fade-200-leave-to { opacity: 0; }
+
+/* fade */
+.fade-enter-active,
+.fade-leave-active { transition: opacity 300ms ease-out; }
+.fade-enter,
+.fade-leave-to { opacity: 0; }
+
+/* fade-400 */
+.fade-400-enter-active,
+.fade-400-leave-active { transition: opacity 400ms ease-out; }
+.fade-400-enter,
+.fade-400-leave-to { opacity: 0; }
+
+/* fade-500 */
+.fade-500-enter-active,
+.fade-500-leave-active { transition: opacity 500ms ease-out; }
+.fade-500-enter,
+.fade-500-leave-to { opacity: 0; }

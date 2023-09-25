@@ -1,0 +1,95 @@
+@use "sass:math";
+.contacts-page {
+    padding: em(120) em(90) em(100) 0;
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        margin-top: em(60);
+    }
+
+    &__table {
+        width: 50%;
+
+        &-row {
+            display: flex;
+            margin-bottom: em(20);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-key {
+            flex-shrink: 0;
+            width: em(192);
+            padding-right: em(40);
+        }
+
+        &-value {
+            max-width: em(510);
+        }
+    }
+
+    &__map {
+        width: em(562);
+        height: em(300);
+        margin-left: em(110);
+    }
+}
+
+
+.html-mobile {
+    .contacts-page {
+        padding: em(90) 0 em(80);
+
+        &__content {
+            flex-wrap: wrap;
+            margin-top: em(40);
+        }
+
+        &__table {
+            order: 1;
+            width: 100%;
+        }
+
+        &__map {
+            width: 100%;
+            height: em(400);
+            margin-left: 0;
+            margin-bottom: em(60);
+        }
+    }
+}
+
+
+.html-phone {
+    .contacts-page {
+        padding: em(100) 0 em(50);
+
+        &__content {
+            margin-top: em(20);
+        }
+
+        &__table {
+            &-row {
+                flex-direction: column;
+                margin-bottom: em(20);
+            }
+
+            &-key {
+                margin-bottom: em(10);
+            }
+
+            .b-text {
+                font-size: em(16);
+                line-height: math.div(25,16);
+            }
+        }
+
+        &__map {
+            height: em(207);
+            margin-bottom: em(20);
+        }
+    }
+}

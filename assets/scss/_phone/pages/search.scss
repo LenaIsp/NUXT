@@ -1,0 +1,16 @@
+/****************************************** SEARCH *********************************************/
+
+.sr-result_head {
+    &_tags {
+        width: 100%;
+        .sr-result_head_item {
+            margin: em(10) em(15) 0 0;
+        }
+    }
+    &_sort {
+        width: 100%;
+        .sr-result_head_item {
+            margin: em(10) em(15) 0 0;
+        }
+    }
+}

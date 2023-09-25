@@ -1,0 +1,44 @@
+/*********************************************************************************************************************
+*
+*                                               POPUPS BASE
+*
+**********************************************************************************************************************/
+
+
+/* common */
+.b-popup { position: fixed; z-index: 1111; overflow: auto; color: black; }
+
+.b-popup_overlay { background: black; opacity: 0.65; }
+
+.b-popup_scroll { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.full_screen_popup {
+    .b-popup_scroll { background: white; }
+}
+
+.b-popup_content { background: white; width: em(720); height: auto; max-height: 100%; }
+.b-popup_content_in { padding: 2em; z-index: 0; }
+
+
+
+
+.b-popup_close {
+    color: $lightblack;
+    position: absolute; right: em(14); top: em(13); width: em(22); height: em(22); z-index: 0;
+    @include b-trans_opacity;
+
+    &:hover { opacity: 0.7; }
+}
+
+
+
+
+.b-popup_title { font-size: em(24); line-height: 1.23; max-width: 100%; color: #463277; }
+.b-popup_text {
+    margin-top: 0.5em; font-size: 1em; line-height: 1.5; max-width: 100%;
+    div, p { line-height: inherit; }
+    p { margin: 0 0 1em 0; }
+}
+.b-popup_text_with_scroll {
+    padding-right: 2em; line-height: inherit;
+    max-height: 27.3em; overflow: hidden; overflow-y: auto; -webkit-overflow-scrolling: auto;
+}

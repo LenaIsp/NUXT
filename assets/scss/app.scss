@@ -1,0 +1,93 @@
+// base
+@import "base/variables";
+@import "base/normalize";
+@import "base/mixins";
+@import "base/asd";
+@import "base/indents";
+@import "base/transitions";
+@import "base/fonts";
+@import "base/colors";
+
+// ui
+@import "ui/swiper";
+
+// blocks
+@import "blocks/form-elements";
+@import "blocks/base";
+
+// components
+@import "components/header";
+@import "components/footer";
+@import "components/search";
+@import "components/mobile-menu";
+@import "components/video-player";
+@import "components/video-slider";
+@import "components/ticker";
+@import "components/strategy-block";
+@import "components/scroll-block";
+@import "components/interview-block";
+@import "components/toggle";
+@import "components/vacancy-block";
+@import "components/gallery-item";
+@import "components/long-arrow";
+
+// popups
+@import "popups/base";
+@import "popups/article";
+@import "popups/gallery-popup";
+@import "popups/projects-popup";
+
+// pages
+@import "pages/intro";
+@import "pages/biz";
+@import "pages/media";
+@import "pages/about";
+@import "pages/search";
+@import "pages/business";
+@import "pages/about-channel";
+@import "pages/awards";
+@import "pages/contacts";
+@import "pages/strategy";
+@import "pages/responsibility";
+@import "pages/career";
+@import "pages/gallery";
+@import "pages/tech";
+@import "pages/sitemap";
+
+
+// ----------------------------------------- DESKTOP ----------------------------------------------
+.html-desktop {}
+
+
+// ----------------------------------------- TABLET & PHONE ----------------------------------------------
+.html-mobile {
+    // base
+    @import "_tablet/base/asd";
+    @import "_tablet/base/indents";
+
+    // components
+    @import "_tablet/components/header";
+    @import "_tablet/components/search";
+    @import "_tablet/components/vacancy-block";
+
+    // pages
+    @import "_tablet/pages/search";
+    @import "_tablet/pages/strategy";
+
+}
+
+
+// ----------------------------------------- PHONE ----------------------------------------------
+.html-phone {
+    // base
+    @import "_phone/base/asd";
+    @import "_phone/base/indents";
+
+    // components
+    @import "_phone/components/search";
+    @import "_phone/components/vacancy-block";
+
+    // pages
+    @import "_phone/pages/search";
+    @import "_phone/pages/strategy";
+}

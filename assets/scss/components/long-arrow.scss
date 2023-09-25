@@ -1,0 +1,58 @@
+.long-arrow {
+    width: em(92);
+    height: em(22);
+    transition: color 250ms ease-out;
+    position: relative;
+    text-align: right;
+
+    $parent: &;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: auto;
+        width: 100%;
+        top: 50%;
+        height: 2px;
+        transform: translateY(-50%);
+        background-color: currentColor;
+    }
+
+    svg {
+        display: inline-block;
+        width: em(12);
+        margin-right: em(-1);
+    }
+
+    &:hover {
+        &#{$parent}--hover-color {
+            color: $blue;
+        }
+
+        &#{$parent}--animation::before {
+            animation: slide-arrow 1000ms infinite;
+
+            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                animation: none;
+            }
+        }
+    }
+
+    &__hover-wrap:hover {
+        #{$parent} {
+            &#{$parent}--hover-color {
+                color: $blue;
+            }
+
+            &#{$parent}--animation::before {
+                animation: slide-arrow 1000ms infinite;
+
+                @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                    animation: none;
+                }
+            }
+        }
+    }
+}

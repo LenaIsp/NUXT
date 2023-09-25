@@ -1,0 +1,26 @@
+/* color */
+.white-opacity-color {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* background */
+.blue-bg {
+    background-color: $blue;
+}
+.lightblack-bg {
+    background-color: $lightblack;
+}
+
+
+
+/* svg */
+.lightblack-svg-fill {
+    svg {
+        fill: $lightblack;
+    }
+}
+.white-svg-fill {
+    svg {
+        fill: white;
+    }
+}

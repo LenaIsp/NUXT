@@ -1,0 +1,22 @@
+/****************************************** SEARCH *********************************************/
+
+.sr-result_head {
+    &_item {
+        margin-left: 1em;
+        line-height: 1.4;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+.sr-input {
+  &_wrap-close  {
+    padding-right: em(30);
+    border-bottom: 2px solid white;
+  }
+}
+input[type="text"].sr-input {
+    border-bottom: 0;
+    padding-right: 0 !important;
+}

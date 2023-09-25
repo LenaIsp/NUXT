@@ -1,0 +1,70 @@
+@use "sass:math";
+.strategy-block {
+    padding: em(20) 0 em(80);
+    display: flex;
+    width: 32.6%;
+    margin-right: 0.6%;
+    position: relative;
+
+    &::before {
+        opacity: 0.2;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &__number {
+        font-size: em(100);
+        line-height: 1;
+    }
+
+    &__text {
+        width: 80%;
+        font-size: em(16);
+        line-height: math.div(25,16);
+    }
+
+    &:last-of-type {
+        padding-bottom: em(118);
+    }
+}
+
+
+.html-mobile {
+    .strategy-block {
+        padding: em(10) 0 em(60);
+
+        &__number {
+            font-size: em(80);
+        }
+
+        &__text {
+            width: 95%;
+            font-size: em(16);
+        }
+
+        &:last-of-type {
+            padding-bottom: em(100);
+        }
+    }
+}
+
+
+.html-phone {
+    .strategy-block {
+        width: 100%;
+        margin-right: 0;
+        padding: em(10) 0 em(40);
+
+        &__number {
+            font-size: em(60);
+        }
+
+        &:last-of-type {
+            padding-bottom: em(80);
+        }
+    }
+}

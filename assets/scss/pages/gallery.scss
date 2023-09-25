@@ -1,0 +1,46 @@
+.gallery-page {
+    padding-top: em(165);
+    padding-bottom: em(150);
+
+    &__title {
+        padding-bottom: em(40);
+        border-bottom: 1px solid rgba(white, 0.3);
+
+        span {
+            font-size: em(55);
+            line-height: 1;
+        }
+    }
+
+    &__download {
+        text-align: center;
+        padding-top: em(11);
+        padding-bottom: em(40);
+
+        //span {
+        //    display: block;
+        //    text-align: center;
+        //    margin-top: em(20, 20);
+        //}
+    }
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 em(-5);
+    }
+}
+
+
+.html-mobile {
+    .gallery-page {
+        padding-top: em(70);
+        padding-bottom: em(70);
+
+        &__title {
+            span {
+                font-size: em(30);
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+.gallery-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: em(10);
+
+    &__holder {
+        max-width: 80vw;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__closer {
+        margin-left: auto;
+        margin-bottom: em(10);
+
+        svg {
+            width: em(30);
+            height: em(30);
+        }
+    }
+
+    &__img {
+        margin-bottom: em(10);
+        //height: 100%;
+        max-width: 80vw;
+        max-height: 85vh;
+
+        img {
+            max-width: 100%;
+            height: inherit;
+            max-height: inherit;
+        }
+    }
+
+    &__video {
+        width: 70vw;
+    }
+
+    &__title {
+        font-size: em(14);
+        transition: all .2s $ease;
+        margin-bottom: em(10);
+        display: flex;
+
+        svg {
+            width: em(14);
+            height: em(14);
+            margin-right: em(10);
+        }
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    &__info {
+        display: flex;
+
+        &-text {
+            font-size: em(14);
+            margin-right: em(10);
+            color: #B0B0B0;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .gallery-popup {
+        &__img {
+            max-width: 100%;
+            max-height: 65vh;
+        }
+
+        &__video {
+            width: 90vw;
+        }
+
+        &__holder {
+            max-width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+}

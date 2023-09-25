@@ -1,0 +1,39 @@
+/* =====================================================================
+					            FONTS
+======================================================================== */
+
+@font-face {
+    font-family: 'Suisse';
+    src: url('@/assets/fonts/subset-SuisseIntl-Regular.eot');
+    src: url('@/assets/fonts/subset-SuisseIntl-Regular.eot?#iefix') format('embedded-opentype'),
+         url('@/assets/fonts/subset-SuisseIntl-Regular.woff2') format('woff2'),
+         url('@/assets/fonts/subset-SuisseIntl-Regular.woff') format('woff'),
+         url('@/assets/fonts/subset-SuisseIntl-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suisse';
+    src: url('@/assets/fonts/subset-SuisseIntl-Medium.eot');
+    src: url('@/assets/fonts/subset-SuisseIntl-Medium.eot?#iefix') format('embedded-opentype'),
+    url('@/assets/fonts/subset-SuisseIntl-Medium.woff2') format('woff2'),
+    url('@/assets/fonts/subset-SuisseIntl-Medium.woff') format('woff'),
+    url('@/assets/fonts/subset-SuisseIntl-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suisse';
+    src: url('@/assets/fonts/subset-SuisseIntl-Bold.eot');
+    src: url('@/assets/fonts/subset-SuisseIntl-Bold.eot?#iefix') format('embedded-opentype'),
+    url('@/assets/fonts/subset-SuisseIntl-Bold.woff2') format('woff2'),
+    url('@/assets/fonts/subset-SuisseIntl-Bold.woff') format('woff'),
+    url('@/assets/fonts/subset-SuisseIntl-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

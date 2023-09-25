@@ -1,0 +1,81 @@
+/*********************************************************************************************************************
+*
+*                                               ASD FRAMEWORK
+*
+**********************************************************************************************************************/
+
+
+
+.m-asd-clear { @include asd-clear; }
+.m-asd-wrap { @include asd-wrap;}
+.m-asd-wrap-2 { @include asd-wrap-2; }
+.m-asd-wrap-3 { @include asd-wrap-3; }
+.m-asd-left { @include asd-left; }
+.m-asd-right { @include asd-right; }
+
+
+
+/****************************** IMAGE ******************************/
+.m-asd-img { @include asd-img; }
+.m-asd-img-fit { @include asd-img-fit; }
+.m-asd-img-width { @include asd-img-width; }
+.m-asd-img-height { @include asd-img-height; }
+
+.m-asd-img-crop-wrap { @include asd-img-crop-wrap; }
+.m-asd-img-crop { @include asd-img-crop; }
+
+.m-asd-bg-fit { @include asd-bg-fit; }
+.m-asd-bg-crop { @include asd-bg-crop; }
+
+.m-asd-svg-fit { @include asd-svg-fit; }
+.m-asd-svg-fit svg { @include asd-svg-fit-svg; }
+
+
+
+/******************************* TEXT ******************************/
+.m-asd-text-center { @include asd-text-center; }
+.m-asd-text-center:after { @include asd-text-center-after; }
+.m-asd-text-center > * { @include asd-text-center-children; }
+.m-asd-text-center-1 { @include asd-text-center-1; }
+.m-asd-text-center-2 { @include asd-text-center-2; }
+
+
+
+/***************************** POSITION ****************************/
+.m-asd-pos-center { @include asd-pos-center; }
+.m-asd-pos-top-center { @include asd-pos-top-center; }
+.m-asd-pos-bottom-center { @include asd-pos-bottom-center; }
+.m-asd-pos-left-top { @include asd-pos-left-top; }
+.m-asd-pos-right-top { @include asd-pos-right-top; }
+.m-asd-pos-left-bottom { @include asd-pos-left-bottom; }
+.m-asd-pos-right-bottom { @include asd-pos-right-bottom; }
+
+
+
+/*************************** INLINE BLOCKS ****************************/
+.m-asd-inline-wrap { @include asd-inline-wrap; }
+.m-asd-inline-block { @include asd-inline-block; }
+
+
+
+/*************************** FLEX BLOCKS ****************************/
+.m-asd-flex { @include asd-flex; }
+.m-asd-flex-wrap { @include asd-flex-wrap; }
+
+.m-asd-flex-row-top { @include asd-flex-row-top; }
+.m-asd-flex-row-center { @include asd-flex-row-center; }
+.m-asd-flex-row-bottom { @include asd-flex-row-bottom; }
+.m-asd-flex-row-left { @include asd-flex-row-left; }
+.m-asd-flex-row-right { @include asd-flex-row-right; }
+
+.m-asd-flex-column-left { @include asd-flex-column-left; }
+.m-asd-flex-column-center { @include asd-flex-column-center; }
+.m-asd-flex-column-right { @include asd-flex-column-right; }
+.m-asd-flex-column-top { @include asd-flex-column-top; }
+.m-asd-flex-column-bottom { @include asd-flex-column-bottom; }
+.m-asd-flex-column-reverse { @include asd-flex-column-reverse; }
+
+.m-asd-flex-space-between { @include asd-flex-space-between; }
+.m-asd-flex-space-around { @include asd-flex-space-around; }
+.m-asd-flex-stretch { @include asd-flex-stretch; }
+.m-asd-flex-none { @include asd-flex-none; }

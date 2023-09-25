@@ -1,0 +1,50 @@
+.tech {
+    position: relative;
+
+    &__title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1em;
+
+        span {
+            font-size: em(300);
+            line-height: 1;
+        }
+    }
+
+    &__description {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: em(890);
+        padding: em(20) em(10);
+    }
+}
+
+
+.html-mobile {
+    .tech {
+        &__title {
+            span {
+                font-size: em(250);
+            }
+        }
+
+        &__description {
+            width: 100%;
+        }
+    }
+}
+
+
+.html-phone {
+    .tech {
+        &__title {
+            span {
+                font-size: em(150);
+            }
+        }
+    }
+}

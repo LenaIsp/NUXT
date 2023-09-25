@@ -1,0 +1,86 @@
+/* =====================================================================
+					           SEARCH
+======================================================================== */
+
+.b-search {
+    position: fixed;
+    z-index: 1111;
+    overflow-y: auto;
+    color: white;
+}
+
+.b-search_close {
+    position: absolute;
+    right: em(14);
+    top: em(14);
+    width: em(28);
+    height: em(28);
+    z-index: 10;
+}
+
+input[type="text"].b-search_input {
+    height: auto; width: 100%; color: white; padding: 0; font-size: em(70); background: transparent;
+    border:none; border-bottom: 2px solid white; border-radius: 0; position: relative; line-height: 1;
+    box-shadow: none !important;
+    padding-right: em(102, 70);
+
+    &::-webkit-input-placeholder { color: #ffffff; font-weight: normal; }
+    &::-moz-placeholder { color: #ffffff; font-weight: normal; }
+    &:-ms-input-placeholder { color: #ffffff !important; font-weight: 400 !important; }
+
+    &:focus::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.3); }
+    &:focus::-moz-placeholder { color: rgba(255, 255, 255, 0.3); }
+
+    &::-ms-clear { display: none; }
+
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 100px $blue inset !important;
+        -webkit-text-fill-color: #ffffff !important;
+    }
+}
+input[type="text"].b-search_input--blue {
+  padding-right: em(27);
+}
+.b-search_slider {
+    display: inline-flex;
+}
+.b-search_slide {
+    padding-right: em(40);
+    padding-left: em(10);
+}
+.b-search_slide-title {
+    white-space: nowrap;
+    line-height: 1.06em;
+    display: block;
+}
+
+.b-search_container {
+    padding-bottom: em(150);
+}
+.b-search_bottom {
+    position: fixed;
+    min-height: em(114);
+    background-color: $blue;
+    display: flex;
+    align-items: flex-end;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        width: 100%;
+        height: em(36);
+        background-image: linear-gradient(rgba($blue, 0), $blue);
+        pointer-events: none;
+    }
+}
+.b-search_bottom-in {
+    width: 100%;
+}
+
+.b-search_arrow {
+    width: em(92);
+    height: em(22);
+}

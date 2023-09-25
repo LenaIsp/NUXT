@@ -1,0 +1,15 @@
+@use "sass:math";
+.strategy-page {
+    padding-top: em(165);
+
+    &__header {
+        padding-bottom: em(80);
+        padding-right: em(80);
+    }
+
+    &__header-text {
+        max-width: em(560, 20);
+        font-size: em(20);
+        line-height: math.div(23,20);
+    }
+}

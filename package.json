@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@^8.0.0-rc.4-28224970.6732dc8",
+    "@types/node": "^18.16.19",
+    "nuxt": "^3.7.0"
+  },
+  "dependencies": {
+    "sass": "^1.68.0"
+  }
+}

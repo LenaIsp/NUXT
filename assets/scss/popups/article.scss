@@ -1,0 +1,222 @@
+/******************************************** ARTICLE POPUP **********************************************/
+
+@use "sass:math";
+.ar-top {
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: em(50);
+    z-index: 7;
+    color: $lightblack;
+    background-color: #fff;
+}
+.ar-top_social {
+    width: em(40);
+    height: em(40);
+    padding: em(10);
+    transition: color 250ms ease-out;
+
+    &:hover {
+        color: $blue;
+    }
+}
+.ar-top_line {
+    height: 2px;
+    background: rgba(18, 20, 25, 0.3);
+}
+.ar-top_progress {
+    height: 100%;
+    background: $blue;
+}
+
+
+.ar-content {
+    background-color: #fff;
+    color: #000;
+    padding: 0 em($content_padding_left_right) em(60);
+    overflow: hidden;
+}
+.ar-article_content {
+    max-width: em(1038);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.ar-left {
+    width: 36%;
+}
+.ar-right {
+    width: 63%;
+}
+
+
+.ar-text {
+    font-size: em(20);
+    line-height: math.div(30,20);
+
+    img {
+        @include asd-img-width;
+    }
+    p {
+        line-height: inherit;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    a {
+        text-decoration: none;
+        border-bottom: 1px solid $blue;
+
+        &:hover {
+            text-decoration: none;
+            border-bottom-color: transparent;
+        }
+    }
+    ul {
+        line-height: inherit;
+        list-style: none;
+
+        li {
+            position: relative;
+            line-height: inherit;
+            margin-top: em(30, 20);
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                right: 100%;
+                margin-right: em(11, 20);
+                top: em(12, 20);
+                width: em(28, 20);
+                height: 2px;
+                background: $lightblack;
+            }
+        }
+    }
+    ol {
+      line-height: inherit;
+      li {
+          line-height: inherit;
+          margin-top: em(30, 20);
+          padding-left: 1em;
+      }
+    }
+    h2 { font-size: em(55, 20); margin-top: em(60, 55); margin-bottom: em(30, 55); line-height: 1; }
+    h3 { font-size: em(35, 20); margin-top: em(60, 35); margin-bottom: em(30, 35); line-height: 1; }
+    h4 { font-size: em(25, 20); margin-top: em(60, 25); margin-bottom: em(30, 25); line-height: 1; }
+    h5 { font-size: em(20, 20); margin-top: em(60, 20); margin-bottom: em(30, 20); line-height: 1; }
+    h6 { font-size: em(14, 20); margin-top: 1em; margin-bottom: 1em; line-height: 1; }
+}
+
+
+.ar-quote {
+    position: relative;
+    padding-left: em(60);
+    height: em(40);
+    @include asd-flex-row-left;
+    @include asd-bg-fit;
+    background-position: center left;
+    background-image: url(/img/icons/quote.svg);
+}
+
+
+.ar-slider {
+    position: relative;
+    height: em(600);
+    overflow: visible;
+    margin: 0 em(-10);
+
+    &__button {
+        width: em(34);
+        height: em(26);
+        flex: none;
+        transition: color 300ms ease-out;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+    &__pagination {
+        text-align: center;
+        margin-left: em(5);
+        margin-right: em(5);
+        min-width: em(52, 14);
+    }
+}
+
+.ar-slide {
+    padding: 0 em(10);
+
+    &__bottom_text {
+        @include b-trans_opacity;
+        opacity: 0;
+    }
+
+    &.swiper-slide-active {
+        .ar-slide__bottom_text {
+            opacity: 1;
+        }
+    }
+}
+
+
+
+.html-mobile {
+    .ar-left {
+        width: 26%;
+    }
+    .ar-right {
+        width: 73%;
+    }
+
+    .ar-text {
+        ul, ol {
+            padding-left: 2em;
+        }
+
+        h2 { font-size: em(35, 20); margin-top: em(60, 35); margin-bottom: em(30, 35); line-height: 1; }
+        h3 { font-size: em(30, 20); margin-top: em(60, 30); margin-bottom: em(30, 30); line-height: 1; }
+        h4 { font-size: em(25, 20); margin-top: em(60, 25); margin-bottom: em(30, 25); line-height: 1; }
+        h5 { font-size: em(20, 20); margin-top: em(60, 20); margin-bottom: em(30, 20); line-height: 1; }
+        h6 { font-size: em(14, 20); margin-top: 1em; margin-bottom: 1em; line-height: 1; }
+    }
+
+    .ar-slider {
+        height: 32em;
+    }
+}
+
+
+.html-phone {
+    .ar-left {
+        width: 100%;
+    }
+    .ar-right {
+        width: 100%;
+    }
+
+    .ar-text {
+        font-size: em(16);
+        line-height: math.div(25,16);
+
+        h2 { font-size: em(30, 20); margin-top: em(50, 30); margin-bottom: em(30, 30); line-height: 1; }
+        h3 { font-size: em(20, 20); margin-top: em(50, 20); margin-bottom: em(30, 20); line-height: 1; }
+        h4 { font-size: em(25, 20); margin-top: em(50, 25); margin-bottom: em(30, 25); line-height: 1; }
+        h5 { font-size: em(20, 20); margin-top: em(50, 20); margin-bottom: em(30, 20); line-height: 1; }
+        h6 { font-size: em(14, 20); margin-top: 1em; margin-bottom: 1em; line-height: 1; }
+    }
+
+    .ar-slider {
+        height: 15em;
+    }
+    .ar-slider__button {
+        display: none;
+    }
+    .ar-slider__pagination {
+        min-width: 0;
+        margin: 0;
+        padding: 0.5em 0;
+    }
+}
