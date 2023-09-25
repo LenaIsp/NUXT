@@ -1,7 +1,7 @@
 <template>
   <div>
     <PartsHeader/>
-      <slot></slot>
+      <NuxtPage />
     <PartsFooter/>
   </div>
 </template>
