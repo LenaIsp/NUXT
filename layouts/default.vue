@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div id="default-layout">
     <PartsHeader/>
       <div class="wrap-top">
-        <NuxtPage />
+        <slot />
       </div>
     <PartsFooter/>
   </div>
