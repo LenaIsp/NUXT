@@ -1,3 +1,4 @@
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -12,7 +13,9 @@ export default defineNuxtConfig({
   },
   
   css: ['~/assets/scss/app.scss'],
-
+  devServer: {
+    port: "5000",
+  },
   modules: [
     [
       '@nuxtjs/i18n',
@@ -42,6 +45,8 @@ export default defineNuxtConfig({
         langDir: 'I18n/',
         defaultLocale: 'ru',
       },
-    ],
+    ], 
+    ['nuxt-svgo']
   ],
+
 });

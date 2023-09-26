@@ -12,6 +12,7 @@
 
       <!--Меню-->
       <div class="b-header_right asd-flex-row-right" itemscope itemtype="http://schema.org/SiteNavigationElement">
+
         <div class="b-header_links asd-flex-row-right hide-mobile">
           <NuxtLink
             v-for="(item, index) in menu.pagesAll"
@@ -28,23 +29,20 @@
             {{ $t('header.lang') }}
           </div>
         </div>
-
         <!--Иконка поиска-->
-        <!--
         <div
           class="t-ml-0 m-ml-0 ml-68 b-header_search b-icon_30 b-hover"
           @click="CHANGE_SEARCH_OPENED(true)"
         >
-          <searchIco />
+          <searchIco width="30px" style="fill:'none'" />
         </div>
-
+        <!--Иконка бургер-->
         <div
           class="ml-16 b-header_burger b-icon_30 b-hover hide-desktop"
           @click="CHANGE_MENU_OPENED(true)"
         >
-          <burgerIco />
-        </div>-->
-
+          <burgerIco width="30px" />
+        </div>
       </div>
     </div>
   </div>
@@ -52,8 +50,11 @@
 
 <script setup>
   import menu from "@/config/menu";
+  import searchIco from "~/assets/svg/search.svg";
+  import burgerIco from "~/assets/svg/burger.svg";
   
   const localePath = useLocalePath();
   const { locale } = useI18n();
+
   
 </script>
