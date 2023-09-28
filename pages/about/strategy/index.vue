@@ -8,4 +8,7 @@
   useHead({
     title: 'Стратегия'
   })
+  definePageMeta({
+    layout: "about",
+  });
 </script>

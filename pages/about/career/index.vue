@@ -8,4 +8,7 @@
   useHead({
     title: 'Карьера'
   })
+  definePageMeta({
+    layout: "about",
+  });
 </script>

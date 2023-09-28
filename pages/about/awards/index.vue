@@ -8,4 +8,7 @@
   useHead({
     title: 'Награды'
   })
+  definePageMeta({
+    layout: "about",
+  });
 </script>

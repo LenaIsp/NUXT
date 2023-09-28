@@ -18,8 +18,7 @@ export default defineNuxtConfig({
   },
   modules: [
     [
-      '@nuxtjs/i18n',
-      {
+      '@nuxtjs/i18n', {
         compilation: {
           strictMessage: false,
           escapeHtml: false,
@@ -46,7 +45,10 @@ export default defineNuxtConfig({
         defaultLocale: 'ru',
       },
     ], 
-    ['nuxt-svgo']
+    ['nuxt-svgo', {
+      defaultImport: 'assets/svg',
+      autoImportPath: false
+    }],
   ],
 
 });

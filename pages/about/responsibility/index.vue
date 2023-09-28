@@ -8,4 +8,7 @@
   useHead({
     title: 'Ответственность'
   })
+  definePageMeta({
+    layout: "about",
+  });
 </script>

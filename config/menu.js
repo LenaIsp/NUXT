@@ -7,7 +7,7 @@ const pagesAbout = [
     // },
     {
         to: '/about',
-        name: 'about.header',
+        name: 'about.header.strategy',
         routeName: 'AboutStrategy',
         routeNameNuxt: 'index-about'
     },

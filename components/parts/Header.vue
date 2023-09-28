@@ -20,12 +20,11 @@
             itemprop="url"
             class="ml-20 b-header_link b-text b-hover b-underline-hover b-underline--blue"
             active-class="b-underline b-underline--white"
-           
             :to= "localePath(item.to)"
           >
             {{ $t(item.name) }}
           </NuxtLink>
-          <div class="ml-20 b-header_link b-text b-hover b-underline-hover b-underline--blue">
+          <div class="ml-20 b-header_link b-text b-hover b-underline-hover b-underline--blue" @click="changeLang">
             {{ $t('header.lang') }}
           </div>
         </div>
@@ -34,14 +33,14 @@
           class="t-ml-0 m-ml-0 ml-68 b-header_search b-icon_30 b-hover"
           @click="CHANGE_SEARCH_OPENED(true)"
         >
-          <searchIco width="30px" style="fill:'none'" />
+          <SearchIco />
         </div>
         <!--Иконка бургер-->
         <div
           class="ml-16 b-header_burger b-icon_30 b-hover hide-desktop"
           @click="CHANGE_MENU_OPENED(true)"
         >
-          <burgerIco width="30px" />
+          <BurgerIco />
         </div>
       </div>
     </div>
@@ -50,11 +49,16 @@
 
 <script setup>
   import menu from "@/config/menu";
-  import searchIco from "~/assets/svg/search.svg";
-  import burgerIco from "~/assets/svg/burger.svg";
-  
-  const localePath = useLocalePath();
-  const { locale } = useI18n();
+  import SearchIco from "~/assets/svg/search.svg";
+  import BurgerIco from "~/assets/svg/burger.svg";
 
-  
+  const { locale } = useI18n()
+  /*methods*/
+  const changeLang = () => {
+    if (locale.value == 'ru') {
+      window.location.assign('/en' + location.pathname.slice(3) + location.search);
+    } else {
+      window.location.assign('/ru' + location.pathname.slice(3) + location.search);
+    }
+  }
 </script>
