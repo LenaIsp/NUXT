@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="default-layout">
     <PartsHeader/>
     <div class="wrap-top">
       <slot />
