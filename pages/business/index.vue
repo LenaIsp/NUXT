@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>Газпром-медиа - Бизнесс</h2>
+  <div style="height: 400px">
+    <h2 >Газпром-медиа - Бизнесс</h2>
   </div>
 </template>
 

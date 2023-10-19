@@ -1,21 +1,5 @@
 
 export default defineNuxtConfig({
-  app: {
-    head: {
-      title: 'Газпром-Медиа Холдинг - официальный сайт',
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
-      meta: [{
-        name: 'yandex-verification', content: 'a955478906fac20b',
-        name: 'description', content: 'Газпром-Медиа Холдинг - официальный сайт',
-      }]
-    }
-  },
-  
-  css: ['~/assets/scss/app.scss'],
-  devServer: {
-    port: "5000",
-  },
   modules: [
     [
       '@nuxtjs/i18n', {
@@ -48,7 +32,24 @@ export default defineNuxtConfig({
     ['nuxt-svgo', {
       defaultImport: 'assets/svg',
       autoImportPath: false
-    }],
+      }
+    ],
+    [ '@vueuse/nuxt' ],
   ],
-
+  app: {
+    pageTransitions: {name: "page", mode: "out-in"},
+    head: {
+      title: 'Газпром-Медиа Холдинг - официальный сайт',
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      meta: [{
+        name: 'yandex-verification', content: 'a955478906fac20b',
+        name: 'description', content: 'Газпром-Медиа Холдинг - официальный сайт',
+      }]
+    }
+  },
+  css: ['~/assets/scss/app.scss'],
+  devServer: {
+    port: "5000",
+  },
 });

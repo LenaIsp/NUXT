@@ -1,12 +1,19 @@
 <template>
-  <div id="default-layout">
-    <PartsHeader/>
-    <div class="wrap-top">
+  <CommonResize class="app-layout b-relative">
+    <div class="app-layout-in b-relative">
+      <PartsHeader/>
       <slot />
+      <!--<PartsFooter/>-->
     </div>
-    <!--<PartsFooter/>-->
-  </div>
+  </CommonResize>
 </template>
 
-<script>
+<script setup>
 </script>
+
+<style>
+  body {
+    
+  }
+</style>
+
