@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 400px">
+  <div>
     <h2>Газпром-медиа - О нас</h2>
   </div>
 </template>

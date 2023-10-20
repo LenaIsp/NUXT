@@ -487,7 +487,6 @@ export default defineNuxtPlugin(() => {
               img.src = url;
             }
           },
-
         };
 
         return helpersFunction

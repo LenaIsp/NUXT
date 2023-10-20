@@ -1,18 +1,9 @@
-<template>
-  <div 
-    :style="{'font-size': fSize?.value + 'px'}" 
-    :class="classes?.value"
-    ref="resizeBody"
-  >
-    <slot></slot>
-    <div>{{ classes }}</div>
-  </div>
-</template>
-
 <script setup>
-  const { height } = useWindowSize()
   const { $helpers } = useNuxtApp()
+  // находит корневой элемент
+  const resizeBody = ref(null)
 
+  // дефолтные значения для рассчета размера шрифта
   let defaultWidth = 1440,
       defaultHeight = 750,
       defaultFont = 16,
@@ -20,31 +11,27 @@
       minWidth = 1050,
       minHeight = 500;
 
-  // находит корневой элемент
-  const resizeBody = ref(null)
-
+  /* data */
   //начальные переменные для класса и шрифта
-  let classes = ref('');
-  let changeClasses = ref('');
+  let bodyClass = ref({});
   let fSize = ref(16);
-  let changefSize = ref(16);
-
-  //начальные переменные для ширины и высоты экрана
+  //начальные переменные для высоты и ширины
   const vw = ref(0)
-  const vh = ref(height)
+  const vh = ref(0)
+  /* end data */
 
   //отслеживает ширину экрана
   useResizeObserver(resizeBody, (entries) => {
     const entry = entries[0]
-    const { width } = entry.contentRect
+    const { width, height} = entry.contentRect
     vw.value = width
-    changeClasses.value = bodyClass()
-    changefSize.value = fontSize()
+    vh.value = height
+    bodyClass.value = getBodyClass()
+    fSize.value = getFontSize()
   })
 
-
   /*methods*/
-  const bodyClass = () => {
+  const getBodyClass = () => {
     return {
       "html-desktop": !($helpers().checkForPhoneMedia() || $helpers().checkForTabletMedia()),
       "html-mobile": $helpers().checkForPhoneMedia() || $helpers().checkForTabletMedia(),
@@ -59,7 +46,7 @@
     };
   }
   
-  const fontSize = () => {
+  const getFontSize = () => {
     if ( $helpers().checkForPhoneMedia()) {
       return 16;
     } else if ( $helpers().checkForTabletMedia() ) {
@@ -78,27 +65,17 @@
   /*end methods*/
 
 
-  /*computed*/
-  const getBodyClass = computed(() => {  
-    return changeClasses.value;
-  })
-  const getfontSize = computed(() => {
-    return changefSize.value;
-  })
-  
-  const isMobile = computed(() => {
-    return $helpers().checkForMobile();
-  })
-  
 
 
-  onMounted(() => {
-    classes.value = getBodyClass
-    fSize.value = getfontSize
-  })
+
+  /*computed пример*/
+  /*
+  const getBodyClass = computed(() => {
+    return fSize.value;
+  })*/
+  /*end computed*/
 
   /*Хуки жизненого цикла*/
-
   /*
   onBeforeUpdate(() => {
     console.log('onBeforeUpdate')
@@ -145,3 +122,14 @@
   */
 
 </script>
+
+<template>
+  <div 
+    :style="fSize && {'font-size': fSize + 'px'}" 
+    :class="bodyClass"
+    ref="resizeBody"
+  >
+    <slot></slot>
+    <div>{{ bodyClass }}</div>
+  </div>
+</template>
