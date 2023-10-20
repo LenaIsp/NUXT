@@ -1,11 +1,15 @@
 <template>
   <div :style="fSize && { 'font-size': fSize + 'px'}" :class="bodyClass()" ref="el">
     <slot></slot>
-    <div></div>
+    <div>{{ test }}</div>
   </div>
 </template>
 
 <script setup>
+  const { $helpers } = useNuxtApp()
+
+  let test = ref(undefined);
+
   let defaultWidth = 1440,
       defaultHeight = 750,
       defaultFont = 16,
@@ -18,6 +22,8 @@
   const el = ref(null)
   const vw = ref(0)
   const vh = ref(height)
+
+  
   
 
   useResizeObserver(el, (entries) => {
@@ -76,6 +82,8 @@
     })
 
     window.addEventListener("resize", bodyClass);
+    test.value = $helpers().checkForMobile()
+    console.log(test.value)
   })
 
 
