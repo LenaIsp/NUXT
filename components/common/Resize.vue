@@ -130,6 +130,5 @@
     ref="resizeBody"
   >
     <slot></slot>
-    <div>{{ bodyClass }}</div>
   </div>
 </template>

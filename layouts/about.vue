@@ -1,5 +1,10 @@
+<script setup>
+  import menu from "@/config/menu";
+  const { locale } = useI18n()
+</script>
+
 <template>
-  <CommonResize id="app" class="app-layout b-relative">
+  <CommonResize class="app-layout b-relative">
     <div class="app-layout-in b-relative">
       <PartsHeader />
       <div class="ab-wrap">
@@ -24,14 +29,8 @@
         <!--меню About-->
         <slot />
       </div>  
-
-      <slot />
       
       <!--<PartsFooter/>-->
     </div>
   </CommonResize>
 </template>
-<script setup>
-  import menu from "@/config/menu";
-  const { locale } = useI18n()
-</script>

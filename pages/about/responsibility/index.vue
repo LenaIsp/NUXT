@@ -1,9 +1,3 @@
-<template>
-  <div style="height: 400px">
-    <h2>Газпром-медиа - Ответственность</h2>
-  </div>
-</template>
-
 <script setup>
   useHead({
     title: 'Ответственность'
@@ -12,3 +6,8 @@
     layout: "about",
   });
 </script>
+<template>
+  <div class="strategy-page">
+    <h2>Газпром-медиа - Ответственность</h2>
+  </div>
+</template>

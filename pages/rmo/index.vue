@@ -1,13 +1,11 @@
+<script setup>
+  useHead({
+    title: 'RMO'
+  })
+</script>
+
 <template>
-  <div style="height: 400px">
+  <div class="strategy-page">
     <h2>Газпром-медиа - Главная</h2>
   </div>
 </template>
-
-<script>
-  export default {
-    head: {
-      title: 'RMO'
-    }
-  };
-</script>

@@ -1,9 +1,12 @@
+<script setup>
+  useHead({
+    title: 'newsbytag'
+  })
+</script>
+
 <template>
-  <div style="height: 400px">
+  <div class="strategy-page">
     <h2>Газпром-медиа - Теги</h2>
     <p>ID - {{ id }}</p>
   </div>
 </template>
-
-<script>
-</script>
