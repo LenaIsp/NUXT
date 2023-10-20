@@ -1,14 +1,17 @@
 <template>
-  <div :style="fSize && { 'font-size': fSize + 'px'}" :class="bodyClass()" ref="el">
+  <div 
+    :style="{'font-size': fSize?.value + 'px'}" 
+    :class="classes?.value"
+    ref="resizeBody"
+  >
     <slot></slot>
-    <div>{{ test }}</div>
+    <div>{{ classes }}</div>
   </div>
 </template>
 
 <script setup>
+  const { height } = useWindowSize()
   const { $helpers } = useNuxtApp()
-
-  let test = ref(undefined);
 
   let defaultWidth = 1440,
       defaultHeight = 750,
@@ -16,47 +19,50 @@
       maxFont = 22,
       minWidth = 1050,
       minHeight = 500;
-  
-  const { height } = useWindowSize()
-  
-  const el = ref(null)
+
+  // находит корневой элемент
+  const resizeBody = ref(null)
+
+  //начальные переменные для класса и шрифта
+  let classes = ref('');
+  let changeClasses = ref('');
+  let fSize = ref(16);
+  let changefSize = ref(16);
+
+  //начальные переменные для ширины и высоты экрана
   const vw = ref(0)
   const vh = ref(height)
 
-  
-  
-
-  useResizeObserver(el, (entries) => {
+  //отслеживает ширину экрана
+  useResizeObserver(resizeBody, (entries) => {
     const entry = entries[0]
     const { width } = entry.contentRect
     vw.value = width
+    changeClasses.value = bodyClass()
+    changefSize.value = fontSize()
   })
+
 
   /*methods*/
   const bodyClass = () => {
     return {
-      "html-desktop": !(Helpers.checkForPhoneMedia() || Helpers.checkForTabletMedia()),
-      "html-mobile": Helpers.checkForPhoneMedia() || Helpers.checkForTabletMedia(),
-      "html-phone":  Helpers.checkForPhoneMedia(),
-      "html-tablet": Helpers.checkForTabletMedia(),
-      "html-mac": Helpers.isMac(),
-      "html-ie": Helpers.isIE(),
+      "html-desktop": !($helpers().checkForPhoneMedia() || $helpers().checkForTabletMedia()),
+      "html-mobile": $helpers().checkForPhoneMedia() || $helpers().checkForTabletMedia(),
+      "html-phone":  $helpers().checkForPhoneMedia(),
+      "html-tablet": $helpers().checkForTabletMedia(),
+      "html-mac": $helpers().isMac(),
+      "html-ie": $helpers().isIE(),
 
       /*"html-landscape": this.isLandscape,
       "html-portrait": !this.isLandscape,
       "html-preloading": this.showPreloader,*/
     };
   }
-
-  /*computed*/
-  const fSize = computed(() => {
-    if ( Helpers.checkForPhoneMedia()) {
-      /*для изменения размера*/
-      const x = vw.value
+  
+  const fontSize = () => {
+    if ( $helpers().checkForPhoneMedia()) {
       return 16;
-    } else if ( Helpers.checkForTabletMedia() ) {
-      /*для изменения размера*/
-      const x = vw.value
+    } else if ( $helpers().checkForTabletMedia() ) {
       return 16;
     } else {
       return Math.min(
@@ -68,24 +74,28 @@
           )
       );
     }
+  }
+  /*end methods*/
+
+
+  /*computed*/
+  const getBodyClass = computed(() => {  
+    return changeClasses.value;
+  })
+  const getfontSize = computed(() => {
+    return changefSize.value;
   })
   
   const isMobile = computed(() => {
-    return Helpers.checkForMobile();
+    return $helpers().checkForMobile();
   })
   
+
+
   onMounted(() => {
-    const body = el.value
-    body.className = "app-layout b-relative";
-    Object.entries(bodyClass()).map((item) => {
-      item[1] === true && body.classList.add(item[0])
-    })
-
-    window.addEventListener("resize", bodyClass);
-    test.value = $helpers().checkForMobile()
-    console.log(test.value)
+    classes.value = getBodyClass
+    fSize.value = getfontSize
   })
-
 
   /*Хуки жизненого цикла*/
 
